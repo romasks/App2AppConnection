@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+        rel {
+            initWith release
+        }
+        qa {
+            initWith rel
+        }
+        dev {
+            initWith debug
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':lib_cashier_domain')
+
+    implementation deps.kotlin_stdlib
+    implementation deps.threetenbp
+}
+
+buildscript {
+    apply from: "../cashier_dependencies.gradle"
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath(plgns.android_gradle_plugin)
+        classpath(plgns.kotlin_gradle_plugin)
+    }
+}

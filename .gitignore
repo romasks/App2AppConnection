@@ -1,0 +1,10 @@
+# Default ignored files
+**/*.iml
+*.iml
+.gradle
+.idea
+build
+gradle
+gradlew
+gradlew.bat
+local.properties

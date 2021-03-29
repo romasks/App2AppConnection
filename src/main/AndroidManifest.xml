@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.romasks.cashier.payapp">
+
+    <application>
+        <service android:name="com.romasks.cashier.payapp.listener.ListenerService">
+            <intent-filter>
+                <action android:name="com.romasks.cashier.payapp.action.CASHIER_PAYMENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.romasks.cashier.payapp.listener.LogoutReceiver">
+            <intent-filter>
+                <action android:name="com.romasks.cashier.action.LOGOUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

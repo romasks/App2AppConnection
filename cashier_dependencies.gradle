@@ -1,0 +1,17 @@
+def versions = [:]
+versions.android_gradle_plugin = "3.5.0"
+versions.kotlin = "1.3.60"
+versions.kotlin_coroutines = "1.3.5"
+versions.koin = "2.0.1"
+versions.threetenabp = "1.2.3"
+
+ext.plgns = [:]
+plgns.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+plgns.kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+
+ext.deps = [:]
+deps.android_koin = "org.koin:koin-android:$versions.koin"
+deps.kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlin_coroutines"
+deps.kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin"
+deps.kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+deps.threetenbp = "com.jakewharton.threetenabp:threetenabp:$versions.threetenabp"
